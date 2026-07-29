@@ -6,6 +6,8 @@ interface AddQuoteModalProps {
   onSuccess: (newQuote: any) => void;
 }
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 export const AddQuoteModal: React.FC<AddQuoteModalProps> = ({ isOpen, onClose, onSuccess }) => {
   const [text, setText] = useState('');
   const [author, setAuthor] = useState('');
@@ -26,7 +28,7 @@ export const AddQuoteModal: React.FC<AddQuoteModalProps> = ({ isOpen, onClose, o
     setError('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/quotes', {
+      const response = await fetch(`${API_BASE_URL}/api/quotes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

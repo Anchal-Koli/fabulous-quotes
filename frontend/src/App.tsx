@@ -21,6 +21,8 @@ interface Quote {
 const CATEGORIES = ['all', 'wisdom', 'inspiration', 'motivation', 'design', 'tech', 'life'];
 const FOLDERS = ['All Likes', 'My Quotes', 'Exam Motivation', 'Tech Mindset', 'Inner Peace', 'Miscellaneous'];
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 function App() {
   const [quote, setQuote] = useState<Quote | null>(null);
   const [allQuotes, setAllQuotes] = useState<Quote[]>([]);
@@ -98,7 +100,7 @@ function App() {
     setIsLoading(true);
     setError('');
     try {
-      let url = 'http://localhost:5000/api/quotes/random';
+      let url = `${API_BASE_URL}/api/quotes/random`;
       if (tag && tag !== 'all') {
         url += `?tag=${tag}`;
       }
@@ -122,7 +124,7 @@ function App() {
   const fetchAllQuotes = async (category: string, search: string) => {
     setError('');
     try {
-      let url = 'http://localhost:5000/api/quotes';
+      let url = `${API_BASE_URL}/api/quotes`;
       const params = new URLSearchParams();
       if (category && category !== 'all') {
         params.append('tag', category);
@@ -156,7 +158,7 @@ function App() {
   // Fetch top liked quotes
   const fetchPopularQuotes = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/quotes/popular');
+      const response = await fetch(`${API_BASE_URL}/api/quotes/popular`);
       if (response.ok) {
         const data = await response.json();
         setPopularQuotes(data);
@@ -208,7 +210,7 @@ function App() {
     const endpoint = isAlreadyLiked ? 'unlike' : 'like';
 
     try {
-      const response = await fetch(`http://localhost:5000/api/quotes/${id}/${endpoint}`, {
+      const response = await fetch(`${API_BASE_URL}/api/quotes/${id}/${endpoint}`, {
         method: 'POST',
       });
       if (!response.ok) throw new Error(`Failed to register ${endpoint}`);
