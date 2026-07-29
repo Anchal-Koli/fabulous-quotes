@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "tag": "work",
+    "likes": 42,
+    "en": {
+      "text": "The only way to do great work is to love what you do.",
+      "author": "Steve Jobs",
+      "takeaway": "Find alignment in your daily tasks. When your career matches your genuine curiosity, effort turns into exploration."
+    },
+    "hi": {
+      "text": "शानदार काम करने का एकमात्र तरीका यह है कि आप जो करते हैं उससे प्यार करें।",
+      "author": "स्टीव जॉब्स",
+      "takeaway": "अपने दैनिक कार्यों में रुचि खोजें। जब आपका करियर आपकी वास्तविक जिज्ञासा से मेल खाता है, तो प्रयास खोज में बदल जाता है।"
+    },
+    "hinglish": {
+      "text": "Shaandaar kaam karne ka ekmaatra tareeka yeh hai ki aap jo karte hain usse pyaar karein.",
+      "author": "Steve Jobs",
+      "takeaway": "Apne daily tasks mein interest dhoondein. Jab aapka career aapki curiosity se match karta hai, toh mehnat excitement mein badal jaati hai."
+    }
+  },
+  {
+    "id": 2,
+    "tag": "life",
+    "likes": 28,
+    "en": {
+      "text": "Life is what happens when you're busy making other plans.",
+      "author": "John Lennon",
+      "takeaway": "Embrace unpredictability. Stop over-planning the future and start noticing the opportunities present in the current moment."
+    },
+    "hi": {
+      "text": "ज़िंदगी तब घटती है जब आप दूसरी योजनाएं बनाने में व्यस्त होते हैं।",
+      "author": "जॉन लेनन",
+      "takeaway": "अनिश्चितता को स्वीकार करें। भविष्य की अत्यधिक योजना बनाना बंद करें और वर्तमान क्षण में मौजूद अवसरों को पहचानें।"
+    },
+    "hinglish": {
+      "text": "Zindagi tab ghatti hai jab aap doosri yojanaayein banane mein vyast hote hain.",
+      "author": "John Lennon",
+      "takeaway": "Unpredictability ko accept karein. Future ki zyaada planning ke chakkar mein aaj ke opportunities ko haath se na jaane dein."
+    }
+  },
+  {
+    "id": 3,
+    "tag": "inspiration",
+    "likes": 56,
+    "en": {
+      "text": "The future belongs to those who believe in the beauty of their dreams.",
+      "author": "Eleanor Roosevelt",
+      "takeaway": "Protect your vision. Your aspirations are the blueprints of your reality. Never let present limits define your future."
+    },
+    "hi": {
+      "text": "भविष्य उनका है जो अपने सपनों की सुंदरता में विश्वास करते हैं।",
+      "author": "एलेनोर रूजवेल्ट",
+      "takeaway": "अपनी दृष्टि की रक्षा करें। आपकी आकांक्षाएं आपके भविष्य का खाका हैं। वर्तमान सीमाओं को अपना भविष्य तय न करने दें।"
+    },
+    "hinglish": {
+      "text": "Bhavishya unka hai jo apne sapno ki sundarta mein vishwas karte hain.",
+      "author": "Eleanor Roosevelt",
+      "takeaway": "Apne vision ko positive rakhein. Aapki aspirations hi aapka real future build karti hain. Aaj ki limits ko kal ka target na banayein."
+    }
+  },
+  {
+    "id": 4,
+    "tag": "wisdom",
+    "likes": 64,
+    "en": {
+      "text": "Strive not to be a success, but rather to be of value.",
+      "author": "Albert Einstein",
+      "takeaway": "Shift from taking to giving. Success is a byproduct of the positive value you create for the people around you."
+    },
+    "hi": {
+      "text": "सफल होने के लिए नहीं, बल्कि मूल्यवान बनने के लिए प्रयास करें।",
+      "author": "अठबर्ट आइंस्टीन",
+      "takeaway": "लेने के बजाय देने की भावना रखें। सफलता केवल उस सकारात्मक मूल्य का उप-उत्पाद है जो आप दूसरों के लिए बनाते हैं।"
+    },
+    "hinglish": {
+      "text": "Safal hone ke liye nahi, balki mulyaavaan banane ke liye prayaas karein.",
+      "author": "Albert Einstein",
+      "takeaway": "Lene ke bajaye dene par focus karein. Success bas us value ka reflection hai jo aap doosro ke liye add karte hain."
+    }
+  },
+  {
+    "id": 5,
+    "tag": "wisdom",
+    "likes": 73,
+    "en": {
+      "text": "In the middle of difficulty lies opportunity.",
+      "author": "Albert Einstein",
+      "takeaway": "Reframe challenges. Obstacles are not dead ends; they are catalysts that force you to find innovative pathways."
+    },
+    "hi": {
+      "text": "कठिनाइयों के बीच ही अवसर छिपे होते हैं।",
+      "author": "अल्बर्ट आइंस्टीन",
+      "takeaway": "चुनौतियों को नए रूप में देखें। बाधाएं मृत मार्ग नहीं हैं, बल्कि वे आपको नए और नवीन मार्ग खोजने के लिए प्रेरित करती हैं।"
+    },
+    "hinglish": {
+      "text": "Kathinaaiyon ke beech hi avsar chhipe hote hain.",
+      "author": "Albert Einstein",
+      "takeaway": "Problem ko as a stepping stone dekhein. Obstacles block nahi karte, balki new and creative pathways discover karne par majboor karte hain."
+    }
+  },
+  {
+    "id": 6,
+    "tag": "design",
+    "likes": 95,
+    "en": {
+      "text": "Simplicity is the ultimate sophistication.",
+      "author": "Leonardo da Vinci",
+      "takeaway": "Eliminate the clutter. Good design and clear logic are achieved not when there is nothing more to add, but when there is nothing left to remove."
+    },
+    "hi": {
+      "text": "सादगी ही परम परिष्कार है।",
+      "author": "लियोनार्डो दा विंची",
+      "takeaway": "अव्यवस्था को दूर करें। अच्छा डिज़ाइन और स्पष्ट तर्क तब प्राप्त होता है जब कुछ जोड़ने के लिए न बचे, बल्कि तब जब हटाने के लिए कुछ न बचे।"
+    },
+    "hinglish": {
+      "text": "Saadgi hi param parishkaar hai.",
+      "author": "Leonardo da Vinci",
+      "takeaway": "Noise ko cut out karein. Ek aacha design aur logic tab banta hai jab usme se hatane ke liye kuch bhi faltu na bacha ho."
+    }
+  },
+  {
+    "id": 7,
+    "tag": "design",
+    "likes": 88,
+    "en": {
+      "text": "Details are not the details. They make the design.",
+      "author": "Charles Eames",
+      "takeaway": "Respect user-experience. The micro-interactions, clean paddings, and alignment define the actual premiumness of your product."
+    },
+    "hi": {
+      "text": "विवरण सिर्फ विवरण नहीं होते। वे ही डिज़ाइन बनाते हैं।",
+      "author": "चार्ल्स एम्स",
+      "takeaway": "उपयोगकर्ता-अनुभव का सम्मान करें। सूक्ष्म-संवाद, स्पष्ट पैडिंग और संरेखण आपके उत्पाद की वास्तविक गुणवत्ता को परिभाषित करते हैं।"
+    },
+    "hinglish": {
+      "text": "Vivran sirf vivran nahi hote. Ve hi design banate hain.",
+      "author": "Charles Eames",
+      "takeaway": "User experience ki respect karein. Choti-choti animations, proper margins aur buttons ka style hi product ko premium banata hai."
+    }
+  },
+  {
+    "id": 8,
+    "tag": "tech",
+    "likes": 120,
+    "en": {
+      "text": "Talk is cheap. Show me the code.",
+      "author": "Linus Torvalds",
+      "takeaway": "Focus on implementation. Ideas are abundant, execution is rare. Let your working prototypes speak for your skill."
+    },
+    "hi": {
+      "text": "बोलना आसान है। मुझे कोड दिखाओ।",
+      "author": "लिनस टॉर्वाल्ड्स",
+      "takeaway": "क्रियान्वयन पर ध्यान दें। विचार बहुत हैं, क्रियान्वयन दुर्लभ है। आपके काम करने वाले प्रोटोटाइप को आपके कौशल की बात करने दें।"
+    },
+    "hinglish": {
+      "text": "Bolna aasaan hai. Mujhe code dikhao.",
+      "author": "Linus Torvalds",
+      "takeaway": "Baatein kam aur implementation par focus karein. Ideas bohot aate hain par unhe run karna hi real talent hai."
+    }
+  }
+]
