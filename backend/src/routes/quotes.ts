@@ -25,13 +25,23 @@ interface Quote {
   hinglish: QuoteContent;
 }
 
-// In-memory array initialized from quotes.json
-let quotes: Quote[] = [...initialQuotes];
+// Helper to load quotes from file dynamically
+const loadQuotesFromFile = (): Quote[] => {
+  try {
+    if (fs.existsSync(quotesFilePath)) {
+      const data = fs.readFileSync(quotesFilePath, 'utf-8');
+      return JSON.parse(data);
+    }
+  } catch (err) {
+    console.error('Failed to read quotes from file, using fallback.', err);
+  }
+  return initialQuotes;
+};
 
 // Persist quotes back to quotes.json file helper
-const saveQuotesToFile = () => {
+const saveQuotesToFile = (updatedQuotes: Quote[]) => {
   try {
-    fs.writeFileSync(quotesFilePath, JSON.stringify(quotes, null, 2), 'utf-8');
+    fs.writeFileSync(quotesFilePath, JSON.stringify(updatedQuotes, null, 2), 'utf-8');
   } catch (err) {
     console.error('Failed to write quotes to file', err);
   }
@@ -58,6 +68,7 @@ const generateAutoTakeaway = (text: string, tag: string, lang: 'en' | 'hi' | 'hi
 // GET random quote
 router.get('/random', (req: Request, res: Response): void => {
   const { tag } = req.query;
+  const quotes = loadQuotesFromFile();
   let filteredQuotes = quotes;
 
   if (typeof tag === 'string') {
@@ -75,6 +86,7 @@ router.get('/random', (req: Request, res: Response): void => {
 
 // GET popular quotes (sorted by likes)
 router.get('/popular', (req: Request, res: Response): void => {
+  const quotes = loadQuotesFromFile();
   const sorted = [...quotes].sort((a, b) => b.likes - a.likes).slice(0, 3);
   res.json(sorted);
 });
@@ -82,6 +94,7 @@ router.get('/popular', (req: Request, res: Response): void => {
 // GET all quotes (supports multilingual searching and tag filtering)
 router.get('/', (req: Request, res: Response): void => {
   const { search, tag } = req.query;
+  const quotes = loadQuotesFromFile();
   let result = quotes;
 
   if (typeof tag === 'string') {
@@ -107,6 +120,7 @@ router.get('/', (req: Request, res: Response): void => {
 // POST a new quote with auto-generated AI takeaway context
 router.post('/', (req: Request, res: Response): void => {
   const { text, author, tag, hiText, hiAuthor, hinglishText, hinglishAuthor } = req.body;
+  const quotes = loadQuotesFromFile();
 
   if (!text || !author) {
     res.status(400).json({ error: 'Text and Author are required.' });
@@ -137,7 +151,7 @@ router.post('/', (req: Request, res: Response): void => {
   };
 
   quotes.push(newQuote);
-  saveQuotesToFile(); // write to file for persistence
+  saveQuotesToFile(quotes); // write to file for persistence
   res.status(201).json(newQuote);
 });
 
@@ -146,6 +160,7 @@ router.post('/:id/like', (req: Request, res: Response): void => {
   const rawId = req.params.id;
   const idStr = Array.isArray(rawId) ? rawId[0] : rawId;
   const id = parseInt(idStr || '', 10);
+  const quotes = loadQuotesFromFile();
   const quote = quotes.find(q => q.id === id);
 
   if (!quote) {
@@ -154,7 +169,7 @@ router.post('/:id/like', (req: Request, res: Response): void => {
   }
 
   quote.likes += 1;
-  saveQuotesToFile(); // write to file for persistence
+  saveQuotesToFile(quotes); // write to file for persistence
   res.json({ id: quote.id, likes: quote.likes });
 });
 
@@ -163,6 +178,7 @@ router.post('/:id/unlike', (req: Request, res: Response): void => {
   const rawId = req.params.id;
   const idStr = Array.isArray(rawId) ? rawId[0] : rawId;
   const id = parseInt(idStr || '', 10);
+  const quotes = loadQuotesFromFile();
   const quote = quotes.find(q => q.id === id);
 
   if (!quote) {
@@ -172,7 +188,7 @@ router.post('/:id/unlike', (req: Request, res: Response): void => {
 
   if (quote.likes > 0) {
     quote.likes -= 1;
-    saveQuotesToFile(); // write to file for persistence
+    saveQuotesToFile(quotes); // write to file for persistence
   }
   res.json({ id: quote.id, likes: quote.likes });
 });
