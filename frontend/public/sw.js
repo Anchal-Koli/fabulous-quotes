@@ -3,10 +3,11 @@ const ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/favicon.ico',
+  '/favicon.svg',
   '/logo192.png',
   '/logo512.png'
 ];
+
 
 // Install Event
 self.addEventListener('install', (e) => {
